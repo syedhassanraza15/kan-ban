@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 const dashboard = () => {
   return (
+    // first commit
     <div className='min-h-screen bg-gradient-to-br from-gray-200 via-gray-400 to-gray-600 p-8'>
         
         <div className='max-w-6xl mx-auto bg-white rounded-2xl shadow-lg p-8 space-y-8'>
