@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+
+.nav-link {
+  @apply bg-white text-gray-800 px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition duration-200;
+}
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Montserrat", sans-serif;
+}
+
+/* menu animations */
+/* Slide-down animation for the menu */
+@keyframes slide-down {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease-in-out;
+}
+
+/* Fade-in animation for menu items */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-in-out;
+}
+
+/* Staggered fade-in animation for menu items */
+
+@keyframes staggered-fade-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
+
+.animate-staggered-fade {
+  animation: staggered-fade-in 0.5s ease-in-out forwards;
+}
+
+.animate-staggered-fade-close {
+  animation: staggered-fade-out 0.5s ease-in-out forwards;
+}
